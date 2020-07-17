@@ -1,0 +1,27 @@
+<body style="height:100%;width: 100%;background-color: #3399ff;color:white;padding-top: 50px">
+  <div class="" style="width: 90%;margin-top: 100px;color: #404040;margin:auto;padding:10px 10px 10px 10px;background-color:#d9d9d9">
+    <div class="" style="width: 100%;margin: auto">
+      <h3 style="text-align: center"> List of Employees </h3>
+    </div>
+    <table border="1" width="90%" cellpadding="0" cellspacing="0" text-align="center">
+      <thead>
+        <th>Email</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th colspan="3"></th>
+      </thead>
+      <tbody>
+        <% @employee_tables.each do |employee_table| %>
+        <tr>
+          <td><%= employee_table.email %></td>
+          <td><%= employee_table.first_name %></td>
+          <td><%= employee_table.last_name %></td>
+          <td><%= link_to 'Show', employee_table ,style:'color:white; font-weight: bold;text-decoration:none;margin-left: 60px;background-color: #00ff00;'%></td>
+          <td><%= link_to 'Update', edit_employee_table_path(employee_table),style:'color:white; font-weight: bold;text-decoration:none;margin-left: 60px;background-color: #1a66ff'; %></td>
+          <td><%= link_to 'Delete',employee_table, method: :delete, data: { confirm: "Delete Employee"},style:'color:white; font-weight: bold;text-decoration:none;margin-left: 60px;background-color: #ff1a1a; ' %></td>
+        </tr>
+      </tbody>
+      <% end %>
+    </table>
+  </div>
+</body>

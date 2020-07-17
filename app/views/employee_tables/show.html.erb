@@ -1,0 +1,58 @@
+<body style="height:100%;width: 100%;background-color: #3399ff;color:white;padding-top: 50px">
+  <div class="" style="width: 38%;margin-top: 100px;color: #404040;margin:auto;padding:10px 10px 10px 10px;background-color:#d9d9d9">
+    <div class="" style="width: 100%;margin: auto">
+      <h3 style="text-align: center"> Employee Data</h3>
+    </div>
+    <p>
+      <strong>Email:</strong>
+      <%= @employee_table.email %>
+    </p>
+    <p>
+      <strong>First name:</strong>
+      <%= @employee_table.first_name %>
+    </p>
+
+    <p>
+      <strong>Last name:</strong>
+      <%= @employee_table.last_name %>
+    </p>
+    <% emp = EmployeeDetail.find_by_employee_table_id(@employee_table.id)%>
+    <p>
+      <strong>Employee ID:</strong>
+      <%= emp.employee_id %>
+    </p>
+    <p>
+      <strong>Gender:</strong>
+      <%= emp.gender %>
+    </p>
+    <p>
+      <strong>DOB:</strong>
+      <%= emp.dob %>
+    </p>
+    <p>
+      <strong>Mobile Number:</strong>
+      <%= emp.contact_number %>
+    </p>
+    <% location = EmpLocation.find_by_employee_table_id(@employee_table.id) %>
+    <p>
+      <strong>Current City:</strong>
+      <%= location.current_city %>
+    </p>
+    <p>
+      <strong>Country:</strong>
+      <%= location.country %>
+    </p>
+    <p>
+      <strong>Pin Code:</strong>
+      <%= location.pincode %>
+    </p>
+
+
+
+    <%= link_to 'Edit', edit_employee_table_path(@employee_table),style:'color:white; font-weight: bold;text-decoration:none;margin-left: 60px;background-color: #00ff00; padding: 4px 10px 4px 10px' %>
+    <%= link_to 'Back', employee_tables_path,style:'color:white; font-weight: bold;text-decoration:none;margin-left: 60px;background-color: #ff4d4d; padding: 4px 10px 4px 10px' %>
+  </div>
+
+
+
+</body>

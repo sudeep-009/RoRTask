@@ -1,0 +1,65 @@
+<body style="height:100%;width: 100%;background-color: #3399ff;color:white;padding-top: 50px">
+  <div class="" style="width: 38%;margin-top: 100px;color: #404040;margin:auto;padding:10px 10px 10px 10px;background-color:#d9d9d9">
+     <div class="" style="width: 100%;margin: auto">
+       <h3 style="text-align: center">Enter Employee Data</h3>
+     </div>
+
+
+
+    <%= form_for @employee_table do |employee_table| %>
+    <div class="" style="display: flex;justity: space-around">
+      <div class="">
+        Email:<br/>
+        <%= employee_table.text_field :email %>
+      </div>
+      <div class="">
+        FirstName:</br>
+        <%=  employee_table.text_field :first_name %><br/>
+      </div>
+    </div>
+    <div class=""style="display: flex;justity: space-around">
+      <div class="">
+        LastName:<br/>
+         <%= employee_table.text_field :last_name %>
+      </div>
+      <div class="">
+        Employee ID:<br/>
+         <input type="text" name="employee_id" value=""><br/>
+      </div>
+    </div>
+    <div class=""style="display: flex;justity: space-around">
+      <div class="">
+        Gender:</br>
+         <input type="text" name="gender" value="">
+      </div>
+      <div class="">
+        DOB:<br/>
+         <input type="text" name="dob" value=""><br/>
+      </div>
+    </div>
+    <div class=""style="display: flex;justity: space-around">
+      <div class="">
+        Mobile Number:</br>
+       <input type="text" name="contact_number" value="">
+      </div>
+      <div class="">
+        Current City:<br/>
+         <input type="text" name="current_city" value=""><br/>
+      </div>
+    </div>
+    <div class=""style="display: flex;justity: space-around">
+      <div class="">
+        Country:<br/>
+         <input type="text" name="country" value="">
+      </div>
+      <div class="">
+          PinCode:</br>
+         <input type="text" name="pincode" value=""><br/>
+      </div>
+    </div>
+    <%= employee_table.submit %>
+    <% end %>
+  </div>
+
+
+</body>
